@@ -7,4 +7,4 @@ Kyseessä on eläinbongailussa hyödynnettävä sovellus.
 
 ## Nykyinen toiminnallisuus
 Sovellukseen voi postata eläinhavaintonsa painamalla "Ilmoita havainto". Hakutoimintoa tai kirjautumista ei ole vielä toteutettu.  
-[https://tsoha-elainystavat.herokuapp.com/]
+https://tsoha-elainystavat.herokuapp.com/
