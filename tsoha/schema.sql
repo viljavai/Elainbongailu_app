@@ -1,0 +1,1 @@
+CREATE TABLE posts (id SERIAL PRIMARY KEY, animals TEXT NOT NULL, city TEXT NOT NULL, timedate DATE NOT NULL, comment TEXT);

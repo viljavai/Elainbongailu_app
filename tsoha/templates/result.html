@@ -1,0 +1,12 @@
+Hakutulokset <br>
+<hr>
+<ul>
+{% for result in resultlist %}
+Havaittu: {{ result.animals }} <br>
+Kaupungissa: {{ result.city }} <br>
+Kommentit: {{ result.comment }} <br>
+<hr>
+{% endfor %}
+</ul>
+<hr>
+<a href="/">Takaisin etusivulle</a>
