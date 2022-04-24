@@ -6,5 +6,5 @@ Kyseessä on eläinbongailussa hyödynnettävä sovellus.
 - Sivustolla on myös foorumi käyttäjien väliselle keskustelulle.
 
 ## Nykyinen toiminnallisuus
-Sovellukseen voi postata eläinhavaintonsa painamalla "Ilmoita havainto". Hakutoiminto ja kirjautuminen, sekä uuden käyttäjän tekeminen toimivat. Postauksien kommentointi, tykkääminen sekä poistaminen ovat vielä työn alla. Myös foorumi on vielä kesken.
+Sovellukseen voi postata eläinhavaintonsa painamalla "Ilmoita havainto". Hakutoiminto ja kirjautuminen, sekä uuden käyttäjän tekeminen toimivat. Postauksien kommentointi, tykkääminen ja poistaminen, sekä kuvien postaaminen ovat vielä työn alla. Myös foorumi on vielä kesken.
 https://tsoha-elainystavat.herokuapp.com/
