@@ -1,8 +1,18 @@
-<form action="/login" method="POST">
-<p>Käyttäjäunnus:<br>
-<input type="text" name="username"></p>
-<p>Salasana:<br>
-<input type="password" name="password"></p>
-<input type="submit" value="Kirjaudu">
-</form>
-{% endif %}
+<!DOCTYPE html>
+<link rel="stylesheet" href="static/login.css">
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel="shortcut icon" href="{{ url_for('static', filename='mansikka(1).ico') }}">
+
+<body>
+    <div>
+        <form action="/login" method="POST">
+        <p>Käyttäjäunnus:<br>
+        <input type="text" name="username"></p>
+        <p>Salasana:<br>
+        <input type="password" name="password"></p>
+        <input type="submit" value="Kirjaudu">
+        </form>
+        <br>
+        <a href="/register">Luo uusi käyttäjä</a>
+    </div>
+</body>

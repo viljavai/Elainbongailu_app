@@ -1,32 +1,26 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="static/index.css">
+<link rel="stylesheet" href="static/forum.css">
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <link rel="shortcut icon" href="{{ url_for('static', filename='mansikka(1).ico') }}">
 
 <body>
     <br>
     <div class="header">
-        <h1>ELÄINYSTÄVÄT.APP</h1>
+        <h2>ELÄINYSTÄVIEN FOORUMI</h2>
     </div>
     <br>
     <h2><b>
-        Tervetuloa bongailemaan
-        {% if session.user_id %}
-        {{ username }}!
-        {% else %}
-        !
+        {% if not session.user_id %}
+        Kirjaudu sisään lähettääksesi viestejä
         {% endif %}
     </b></h2>
     <nav>
         <ul>
-            <li><a href="/search">Haku</a></li>
             {% if session.user_id %}
-            <li><a href="/logout">Kirjaudu ulos</a></li>
-            <li><a href="/new">Ilmoita uusi havainto</a></li>
+            <li><a href="/newforumpost">Uusi lanka</a></li>
             {% else %}
             <li><a href="/login">Kirjaudu sisään</a></li>
             {% endif %}
-            <li><a href="/forum">Foorumi</a></li>
             <br>
         </ul>
     </nav>

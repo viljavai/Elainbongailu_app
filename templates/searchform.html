@@ -1,6 +1,14 @@
-<hr>
-<form action="/result" method="GET">
-    <input type="search" placeholder="Hae eläintä, kaupunkia tai päivämäärää" name="query">
-    <button type="submit">Hae!</button>
-  </form>
-<hr>
+<!DOCTYPE html>
+<link rel="stylesheet" href="static/searchform.css">
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel="shortcut icon" href="{{ url_for('static', filename='mansikka(1).ico') }}">
+
+<body>
+    <div>
+        <h2>Hae eläintä, kaupunkia, päivämäärää tai käyttäjää</h2>
+        <br>
+        <form action="/result" method="GET">
+            <input type="search" placeholder="" name="query">
+            <button type="submit">Hae!</button>
+    </div>
+</body>

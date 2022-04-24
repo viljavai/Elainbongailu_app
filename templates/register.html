@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="static/login.css">
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel="shortcut icon" href="{{ url_for('static', filename='mansikka(1).ico') }}">
+
+<body>
+    <div>
+        <form action="/register" method="post">
+            Tunnus: <input type="text" name="username">
+            <p>
+            Salasana: <input type="password" name="password1">
+            <p>
+            Salasana uudestaan: <input type="password" name="password2">
+            <p>
+            <input type="submit" value="Luo tunnus">
+        </form>
+    </div>
+</body>

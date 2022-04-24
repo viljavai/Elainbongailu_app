@@ -1,12 +1,21 @@
-Hakutulokset <br>
-<hr>
-<ul>
-{% for result in resultlist %}
-Havaittu: {{ result.animals }} <br>
-Kaupungissa: {{ result.city }} <br>
-Kommentit: {{ result.comment }} <br>
-<hr>
-{% endfor %}
-</ul>
-<hr>
-<a href="/">Takaisin etusivulle</a>
+<!DOCTYPE html>
+<link rel="stylesheet" href="static/searchform.css">
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel="shortcut icon" href="{{ url_for('static', filename='mansikka(1).ico') }}">
+
+<body>
+    <br>
+    <h2>Hakutulokset:</h2><br>
+    <ul>
+    {% for result in resultlist %}
+    <div>
+        Bongaaja oli {{ result.username }} <br>
+        Havaittu: {{ result.animals }} <br>
+        Kaupungissa: {{ result.city }} <br>
+        Kommentit: {{ result.comment }} <br>
+        {{ result.timedate.strftime("%Y-%m-%d") }} <br>
+    </div>
+    {% endfor %}
+    </ul>
+    <a href="/">Takaisin etusivulle</a>
+</body>

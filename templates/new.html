@@ -1,16 +1,30 @@
-<form action="/send" method="post">
-Minkä eläimen näit?: <br>
-<textarea name="animals" rows="3" cols="40"></textarea>
-<br>
-Missä kaupungissa?: <br>
-<textarea name="city" rows="3" cols="40"></textarea>
-<br>
-Mikä oli havaintopäivä? (muodossa yyyy-mm-dd): <br>
-<textarea name="timedate" rows="3" cols="40"></textarea>
-<br>
-Muuta kommentoitavaa ja tarkempi sijainti/aika (valinnainen): <br>
-<textarea name="comment" rows="3" cols="40"></textarea>
-<br>
-<input type="submit" value="Lähetä">
-</form>
-<button onclick="history.back()">Palaa etusivulle</button>
+<!DOCTYPE html>
+<link rel="stylesheet" href="static/new.css">
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel="shortcut icon" href="{{ url_for('static', filename='mansikka(1).ico') }}">
+
+<body>
+    <div>
+        <form action="/send" method="post">
+        Minkä eläimen näit?: <br>
+        <textarea name="animals" rows="3" cols="40"></textarea>
+        <br>
+        Missä kaupungissa?: <br>
+        <textarea name="city" rows="3" cols="40"></textarea>
+        <br>
+        Mikä oli havaintopäivä? (muodossa yyyy-mm-dd): <br>
+        <textarea name="timedate" rows="3" cols="40"></textarea>
+        <br>
+        Lisää kuva: <br>
+        <br>
+        <form action="/send" method="POST" enctype="multipart/form-data">
+        File: <input type="file" name="Tiedosto">
+        <p> 
+        Muuta kommentoitavaa ja tarkempi sijainti/aika (valinnainen): <br>
+        <textarea name="comment" rows="3" cols="40"></textarea>
+        <br>
+        <input type="submit" value="Lähetä">
+        </form>
+        <button onclick="history.back()">Palaa etusivulle</button>
+    </div>
+</body>
