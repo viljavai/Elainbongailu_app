@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="static/login.css">
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel="shortcut icon" href="{{ url_for('static', filename='mansikka(1).ico') }}">
+
+<body>
+    {{ forumpost.username }}
+    <br>
+    <h2>
+        {{ forumpost.headline }}<br>
+    </h2>
+    <br>
+    {{ forumpost.content }}<br>
+    <br>
+    {{ forumpost.sent.strftime("%d-%m-%Y %H:%M") }}
+    <br>
+    <br>
+    <br>
+    {% for comment in comments %}
+    {{ comment.username }}
+    <br>
+    {{ comment.content }}
+    <br>
+    {{ comment.sent.strftime("%d-%m-%Y %H:%M") }}
+    <br>
+    <br>
+    {% endfor %}
+    <br>
+    {% if session.user_id %}
+        <a href="/forum/{{ forumpost.id }}">Kommentoi</a>
+    {% endif %}
+    <a href="/forum">Takaisin</a>
+</body>

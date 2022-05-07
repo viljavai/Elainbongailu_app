@@ -6,39 +6,46 @@
 <body>
     <br>
     <div class="header">
-        <h2>ELÄINYSTÄVIEN FOORUMI</h2>
+        <h1>ELÄINYSTÄVIEN FOORUMI</h1>
     </div>
+    <br>
     <br>
     <h2><b>
         {% if not session.user_id %}
         Kirjaudu sisään lähettääksesi viestejä
         {% endif %}
     </b></h2>
+    <br>
     <nav>
         <ul>
             {% if session.user_id %}
-            <li><a href="/newforumpost">Uusi lanka</a></li>
+            <li><a href="/newforumpost">Uusi viesti</a></li>
             {% else %}
             <li><a href="/login">Kirjaudu sisään</a></li>
             {% endif %}
+            <li><a href="/">Palaa etusivulle</a></li>
             <br>
         </ul>
     </nav>
     <br>
     <br>
-        {% for post in posts %}
+        {% for forumpost in forumposts %}
             <div class="post">
-                Bongaaja: {{ post.username }} <br>
-                Havaittu: {{ post.animals }} <br>
-                Kaupungissa: {{ post.city }} <br>
-                Kommentit: {{ post.comment }} <br>
-                {{ post.timedate.strftime("%Y-%m-%d") }} <br>
-                {% if session.user_id %}
-                    <a href="/comment">Kommentoi</a>
-                {% endif %}
-                {% if session.user_id and session.username == post.username %}
-                    <a href="/delete">Poista</a>
-                {% endif %}
+                {{ forumpost.username }} <br>
+                <br>
+                <div id="divlink">
+                    <h2>
+                        <a href="/forumpostdetails/{{ forumpost.id }}">{{ forumpost.headline }}</a><br>
+                    </h2>
+                </div>
+                <br>
+                {{ forumpost.sent.strftime("%Y-%m-%d") }} <br>
+                <br>
+                <div id="divlink">
+                    {% if session.user_id and session.username == forumpost.username %}
+                        <a href="/deleteforum/{{ forumpost.id }}">Poista</a>
+                    {% endif %}
+                </div>
             </div>
         {% endfor %}
 </body>

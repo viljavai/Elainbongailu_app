@@ -9,11 +9,22 @@
     <ul>
     {% for result in resultlist %}
     <div>
-        Bongaaja oli {{ result.username }} <br>
+        <h2>
+            <a href="/profile/{{ result.username }}">{{ result.username }} </a><br>
+        </h2>
+        <br>
         Havaittu: {{ result.animals }} <br>
         Kaupungissa: {{ result.city }} <br>
-        Kommentit: {{ result.comment }} <br>
+        {{ result.comment }} <br>
         {{ result.timedate.strftime("%Y-%m-%d") }} <br>
+        <br>
+        <br>
+        {% if session.user_id %}
+            <a href="/comment/{{ result.id }}">Kommentoi</a>
+        {% endif %}
+        {% if session.user_id and session.username == result.username %}
+            <a href="/delete/{{ result.id }}">Poista</a>
+        {% endif %}
     </div>
     {% endfor %}
     </ul>

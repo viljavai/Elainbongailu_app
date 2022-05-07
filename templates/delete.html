@@ -1,5 +1,21 @@
-<h3>Oletko varma että haluat poistaa postauksesi?</h3>
-<br>
-<br>
-<form action="/delete" method="POST">
-    <button type="submit">Antaa mennä!</button>
+<!DOCTYPE html>
+<link rel="stylesheet" href="static/login.css">
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel="shortcut icon" href="{{ url_for('static', filename='mansikka(1).ico') }}">
+
+<body>
+    <h2>
+        Oletko varma että haluat poistaa postauksesi?
+    </h2>
+    <br>
+    <div> 
+        Havaittu: {{ post.animals }} <br>
+        Kaupungissa: {{ post.city }} <br>
+        Kommentit: {{ post.comment }} <br>
+        {{ post.timedate.strftime("%Y-%m-%d") }} <br>
+        <br>
+        <br>
+        <form action="/deletepost/{{ post.id }}" method="POST">
+            <button type="submit">Antaa mennä!</button>
+    </div>
+</body>

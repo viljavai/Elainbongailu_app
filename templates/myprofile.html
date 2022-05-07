@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="static/login.css">
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel="shortcut icon" href="{{ url_for('static', filename='mansikka(1).ico') }}">
+
+<body>
+    <br>
+    <br>
+    <h2>
+        {% for profile in profiles %}
+            {{ profile.username }}
+        {% endfor %}
+    </h2>
+    <br>
+    <br>
+    <div>
+        {% for profile in profiles %}
+            {{ profile.description }}
+        {% endfor %}
+    </div>
+    <br>
+    <br>
+    <h3>
+        Lempieläimeni on:<br>
+    <h3>
+    <div>
+        {% for profile in profiles %}
+            {{ profile.favourite }}
+        {% endfor %}
+    </div>
+    <br>
+<a href="/editprofile">Muokkaa</a><br>
+<a href="/">Etusivulle</a><br>
+
+</body>

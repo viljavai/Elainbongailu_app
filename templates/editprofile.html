@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="static/new.css">
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel="shortcut icon" href="{{ url_for('static', filename='mansikka(1).ico') }}">
+
+<body>
+    <div>
+        <form action="/sendprofile" method="post">
+        Kerro hieman itsestäsi: <br>
+        <textarea name="description" rows="3" cols="40"></textarea>
+        <br>
+        <br>
+        Mikä on lempieläimesi?: <br>
+        <textarea name="favourite" rows="3" cols="40"></textarea>
+        <br>
+        <br>
+        <input type="submit" value="Lähetä">
+        </form>
+        <button onclick="history.back()">Palaa etusivulle</button>
+    </div>
+</body>

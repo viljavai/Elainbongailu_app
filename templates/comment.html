@@ -1,4 +1,26 @@
-Kommentoi käyttäjän username havaintoa:<br>
+<!DOCTYPE html>
+<link rel="stylesheet" href="static/login.css">
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel="shortcut icon" href="{{ url_for('static', filename='mansikka(1).ico') }}">
 
-<form action="/comment" method="post">
-    Kommentti: <br>
+Kommentoi käyttäjän {{ post.username }} havaintoa:<br>
+<br>
+<div>
+    Havaittu: {{ post.animals }} <br>
+    Kaupungissa: {{ post.city }} <br>
+    Kommentit: {{ post.comment }} <br>
+    {{ post.timedate.strftime("%Y-%m-%d") }} <br>
+    <br>
+    <br>
+<div>
+
+<div>
+    <form action="/sendcomment/{{ post.id }}" method="post">
+    Kirjoita viesti: <br>
+    <textarea name="body" rows="6" cols="60"></textarea>
+    <br>
+    <input type="submit" value="Lähetä">
+    </form>
+    <br>
+    <button onclick="history.back()">Palaa</button>
+</div>

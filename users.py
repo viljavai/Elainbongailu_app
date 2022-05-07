@@ -1,3 +1,4 @@
+from unittest import result
 from db import db
 from flask import session
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -29,8 +30,30 @@ def register(username,password):
         return False
     return login(username,password)
 
-def user_id():
+def get_my_id():
     return session.get("user_id",0)
 
-def get_username():
+def get_user_id(username):
+    sql = "SELECT id FROM users WHERE username=:username"
+    result = db.session.execute(sql, {"username":username})
+    return result.fetchone()[0]
+
+def get_my_username():
     return session.get("username")
+
+def get_username(id):
+    sql = "SELECT username FROM users WHERE id=:id"
+    result = db.session.execute(sql, {"id":id})
+    return result.fetchone()
+
+def get_profile(user_id):
+    sql = "SELECT p.description, p.favourite, u.username FROM profiles p, users u WHERE p.user_id=:user_id AND p.user_id = u.id"
+    result = db.session.execute(sql, {"user_id":user_id})
+    return result.fetchall()
+
+def edit_profile(description,favourite):
+    user_id = get_my_id()
+    sql = "INSERT INTO profiles (user_id, description, favourite) VALUES (:user_id, :description, :favourite)"
+    db.session.execute(sql, {"user_id":user_id, "description":description, "favourite":favourite})
+    db.session.commit()
+    return True

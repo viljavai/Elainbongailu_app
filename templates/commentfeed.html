@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="static/forum.css">
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel="shortcut icon" href="{{ url_for('static', filename='mansikka(1).ico') }}">
+
+<body>
+    {% for comment in commentfeed %}
+    <div class="post">
+        {{ comment.username }}<br>
+        {{ comment.body }}<br>
+        {{ comment.sent.strftime("%d-%m-%Y %H:%M") }}
+    </div>
+    <br>
+    {% endfor %}
+</body>

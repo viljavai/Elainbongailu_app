@@ -1,7 +1,7 @@
 body {
     margin: auto;
     max-width: 45em;
-    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-family: sans-serif;
     background: peachpuff;
 }
 
@@ -10,31 +10,31 @@ body {
     border-radius: 25px;
     color: white;
     font-weight: lighter;
-    font-size: 2em;
+    font-size: 1.8em;
     padding: 2em;
 }
 
-li {
-    float: left;
-    margin: auto;
-}
-
-li a {
-    margin: auto;
-    display: block;
-    color: #a04000;
-    font-size: 1.5.em;
-    padding: 1em;
-    background: white ;
+ul li {
+    display: inline-block;
+    padding: 10px;
 }
 
 ul {
-    list-style-type: none;
+    margin: 0;
+    display: block;
+    color: #a04000;
+    font-size: 1.2em;
+    padding: 10px;
+    border-style: groove;
+    background-color: #e59866;
+    border-color: #e59866;
+    text-align: center;
 }
 
 h2 {
     margin: auto;
     color: #6e2c00;
+    text-align: center;
 }
 
 .post {
@@ -45,3 +45,14 @@ h2 {
     text-align: center;
 }
 
+#navbar a {
+    color: white;
+}
+
+a {
+    color: #6e2c00;
+}
+
+a:visited {
+    color: #6e2c00;
+}

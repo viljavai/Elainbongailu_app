@@ -14,4 +14,13 @@ div {
 h2 {
     margin: auto;
     color: #6e2c00;
+    text-align: center;
+}
+
+a {
+    color: #6e2c00;
+}
+
+a:visited {
+    color: #6e2c00;
 }

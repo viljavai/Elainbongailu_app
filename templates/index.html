@@ -17,10 +17,12 @@
         !
         {% endif %}
     </b></h2>
-    <nav>
+    <br>
+    <div id="navbar">
         <ul>
             <li><a href="/search">Haku</a></li>
             {% if session.user_id %}
+            <li><a href="/myprofile">Oma profiili</a></li>
             <li><a href="/logout">Kirjaudu ulos</a></li>
             <li><a href="/new">Ilmoita uusi havainto</a></li>
             {% else %}
@@ -29,22 +31,30 @@
             <li><a href="/forum">Foorumi</a></li>
             <br>
         </ul>
-    </nav>
+    </div>
+    <br>
     <br>
     <br>
         {% for post in posts %}
             <div class="post">
-                Bongaaja: {{ post.username }} <br>
+                <h2>
+                    <a href="/profile/{{ post.username }}">{{ post.username }} </a><br>
+                </h2>
+                <br>
                 Havaittu: {{ post.animals }} <br>
                 Kaupungissa: {{ post.city }} <br>
-                Kommentit: {{ post.comment }} <br>
+                {{ post.comment }} <br>
                 {{ post.timedate.strftime("%Y-%m-%d") }} <br>
+                <br>
+                <br>
                 {% if session.user_id %}
-                    <a href="/comment">Kommentoi</a>
+                    <a href="/comment/{{ post.id }}">Kommentoi</a>
                 {% endif %}
                 {% if session.user_id and session.username == post.username %}
-                    <a href="/delete">Poista</a>
+                    <a href="/delete/{{ post.id }}">Poista</a>
                 {% endif %}
+                <br>
+                <a href="/comments/{{ post.id }}">Katso kommentit</a>
             </div>
         {% endfor %}
 </body>
