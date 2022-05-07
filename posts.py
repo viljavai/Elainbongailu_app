@@ -85,3 +85,8 @@ def get_forum_post(id):
     sql = "SELECT * FROM forumposts WHERE id=:id"
     result = db.session.execute(sql, {"id":id})
     return result.fetchone() 
+
+def get_user_posts(user_id):
+    sql = "SELECT * FROM posts WHERE user_id=:user_id"
+    result = db.session.execute(sql, {"user_id":user_id})
+    return result.fetchall() 

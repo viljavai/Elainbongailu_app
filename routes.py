@@ -133,13 +133,15 @@ def deletepost(id):
 def myprofile():
     id = users.get_my_id()
     profile = users.get_profile(id)
-    return render_template("myprofile.html", profiles=profile)
+    postlist = posts.get_user_posts(id)
+    return render_template("myprofile.html", profiles=profile, postlist=postlist)
 
 @app.route("/profile/<username>")
 def profile(username):
     id = users.get_user_id(username)
     profile = users.get_profile(id)
-    return render_template("profile.html", profiles=profile)
+    postlist = posts.get_user_posts(id)
+    return render_template("profile.html", profiles=profile, postlist=postlist)
 
 @app.route("/editprofile")
 def editprofile():

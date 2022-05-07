@@ -29,6 +29,20 @@
         {% endfor %}
     </div>
     <br>
+    <br>
+    <br>
+    Postaukset:
+    <br>
+    <div>
+        {% for post in postlist %}
+        <br>
+        Havaittu: {{ post.animals }} <br>
+        Kaupungissa: {{ post.city }} <br>
+        {{ post.comment }} <br>
+        {{ post.timedate.strftime("%Y-%m-%d") }} <br>
+        <br>
+        {% endfor %}
+    </div>
 <a href="/editprofile">Muokkaa</a><br>
 <a href="/">Etusivulle</a><br>
 
