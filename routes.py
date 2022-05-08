@@ -1,7 +1,3 @@
-from calendar import c
-from crypt import methods
-
-from scipy.fftpack import idct
 from app import app
 from flask import render_template, request, redirect, session
 from os import getenv
