@@ -10,6 +10,3 @@ Kyseessä on eläinbongailussa hyödynnettävä sovellus.
 - Käyttäjien profiilit näkee klikkaamalla käyttäjänimestä etusivulla.
 - Foorumin viesteihin voi vastata, sekä nähdä kommentit klikkaamalla otsikkoa.
 - Käyttäjä voi sisään kirjautuneena poistaa omat postauksensa ja foorumipostauksensa.
-
-Sovellus Herokussa:
-https://elainystavat.herokuapp.com/
